@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 //added by DG
-@RequestMapping(value = "/tj")
+
 @Controller
 public class IndexController {
     @Autowired

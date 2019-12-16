@@ -12,7 +12,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 /*author : Michael */
 @Controller
-@RequestMapping(value = "/TJ")
 public class DetailController {
 
     @Autowired
