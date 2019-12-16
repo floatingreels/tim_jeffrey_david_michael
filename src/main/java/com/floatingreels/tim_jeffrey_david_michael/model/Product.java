@@ -17,7 +17,13 @@ public class Product {
     private int id;
     @NotBlank
     @NotNull
-    private String name, imgurl, category;
+    private String name;
+    @NotBlank
+    @NotNull
+    private String imgurl;
+    @NotBlank
+    @NotNull
+    private String category;
     @Size(min = 100, message = "give a proper description of this product")
     private String description;
     @DecimalMin(value = "0.05")
