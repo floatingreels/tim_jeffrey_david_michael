@@ -7,13 +7,13 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ProductDAO extends CrudRepository<Product, Integer> {
 
-    @Query("SELECT b FROM Product b WHERE b.category='FOOD'")
+    @Query("SELECT b FROM Product b WHERE b.category like 'FOOD'")
     Iterable<Product> getCatFood();
 
-    @Query("SELECT b FROM Product b WHERE b.category='TOY'")
+    @Query("SELECT b FROM Product b WHERE b.category like 'TOY'")
     Iterable<Product> getCatToy();
 
-    @Query("SELECT b FROM Product b WHERE b.category='HABITAT'")
+    @Query("SELECT b FROM Product b WHERE b.category like 'HABITAT'")
     Iterable<Product> getCatHabitat();
 
 
