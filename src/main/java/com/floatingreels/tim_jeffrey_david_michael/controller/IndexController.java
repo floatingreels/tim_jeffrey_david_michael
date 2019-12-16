@@ -10,34 +10,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 //added by DG
-@RequestMapping(value="/tj")
+@RequestMapping(value = "/tj")
 @Controller
 public class IndexController {
     @Autowired
     ProductDAO dao;
 
-    @RequestMapping(value={"", "/index"}, method = RequestMethod.GET)
-    public String showIndex(ModelMap map){
+    @RequestMapping(value = {"", "/index"}, method = RequestMethod.GET)
+    public String showIndex(ModelMap map) {
         return "index";
     }
 
-    @ModelAttribute(value="allProducts")
-    public Iterable<Product> showProducts(){
+    @ModelAttribute(value = "allProducts")
+    public Iterable<Product> showProducts() {
         return dao.findAll();
     }
 
-    @ModelAttribute(value="categoryFood")
-    public Iterable<Product> showCategoryFood(){
+    @ModelAttribute(value = "categoryFood")
+    public Iterable<Product> showCategoryFood() {
         return dao.getCatFood();
     }
 
-    @ModelAttribute(value="categoryToy")
-    public Iterable<Product> showCategoryToy(){
+    @ModelAttribute(value = "categoryToy")
+    public Iterable<Product> showCategoryToy() {
         return dao.getCatToy();
     }
 
-    @ModelAttribute (value="categoryHabitat")
-    public Iterable<Product> showCategoryHabitat(){
+    @ModelAttribute(value = "categoryHabitat")
+    public Iterable<Product> showCategoryHabitat() {
         return dao.getCatHabitat();
     }
 

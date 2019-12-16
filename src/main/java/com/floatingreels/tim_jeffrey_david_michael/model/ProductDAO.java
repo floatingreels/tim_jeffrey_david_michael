@@ -17,5 +17,4 @@ public interface ProductDAO extends CrudRepository<Product, Integer> {
     Iterable<Product> getCatHabitat();
 
 
-
 }
