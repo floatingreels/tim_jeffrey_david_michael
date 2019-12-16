@@ -41,4 +41,10 @@ public class IndexController {
         return dao.getCatHabitat();
     }
 
+    @RequestMapping(value = {"/confirmation"}, method = RequestMethod.GET)
+    public String showConfirmation(ModelMap map) {
+        return "confirmation";
+
+
+    }
 }
