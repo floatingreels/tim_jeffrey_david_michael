@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <meta charset="UTF-8">
-    <title>TJ: Catalogus</title>
+    <title>TJ: Catalogue</title>
     <script>
         $(document).ready(function () {
             $('#producttable').DataTable({
@@ -43,14 +43,12 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="product : ${allProducts}">
+                <tr th:each="product : ${allProducts}">
 
-                <td th:text="${product.name}"></td>
-                <td th:text="${product.price}"></td>
-                <td><a th:href="@{~/{id}(id = ${product.id})}">Meer details</a></td>
-
-
-            </tr>
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.price}"></td>
+                    <td><a th:href="@{~/{id}(id = ${product.id})}">Meer details</a></td>
+                </tr>
             </tbody>
         </table>
 
