@@ -26,6 +26,19 @@ public class IndexController {
         return dao.findAll();
     }
 
+    @ModelAttribute(value="categoryFood")
+    public Iterable<Product> showCategoryFood(){
+        return dao.getCatFood();
+    }
 
+    @ModelAttribute(value="categoryToy")
+    public Iterable<Product> showCategoryToy(){
+        return dao.getCatToy();
+    }
+
+    @ModelAttribute (value="categoryHabitat")
+    public Iterable<Product> showCategoryHabitat(){
+        return dao.getCatHabitat();
+    }
 
 }
