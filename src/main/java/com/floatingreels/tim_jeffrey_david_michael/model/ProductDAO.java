@@ -16,5 +16,7 @@ public interface ProductDAO extends CrudRepository<Product, Integer> {
     @Query("SELECT b FROM Product b WHERE b.category=HABITAT")
     Iterable<Product> getCatHabitat();
 
+    /*test*/
+
 
 }
