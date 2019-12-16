@@ -38,8 +38,7 @@ public class IndexController {
 
     @ModelAttribute (value="categoryHabitat")
     public Iterable<Product> showCategoryHabitat(){
-        return dao.getCatHabitat()
+        return dao.getCatHabitat();
     }
-
 
 }
