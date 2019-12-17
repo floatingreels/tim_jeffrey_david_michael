@@ -10,11 +10,31 @@
 </head>
 
 <body>
-    <div class="navigation__bar">
-        <nav class="navigation__menu" th:replace ="~{menu::nav_menu(cart)}"></nav>
-    </div>
+<div class="navigation__bar">
+    <nav class="navigation__menu" th:replace="~{menu::nav_menu(cart)}"></nav>
+</div>
+
+<h1>Shopping Cart</h1>
+
+<div class="shopping-cart">
+
+    <table id="producttable">
+        <thead>
+        <tr>
+            <td class="product-image">Image</td>
+            <td class="product-details">Product</td>
+            <td class="product-price">Price</td>
+            <td class="product-quantity">Quantity</td>
+            <td class="product-removal">Remove</td>
+            <td class="product-line-price">Total</td>
+
+        </tr>
+        </thead>
+    </table>
+</div>
+
+<h2>Submit Order</h2>
 <form method="get" th:action="@{~/cart}" object="txt.file">
-    <br>
 
     <div class="container">
         <br>
