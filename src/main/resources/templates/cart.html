@@ -40,28 +40,27 @@
 
     <table id="producttable">
         <thead>
-        <tr>
-            <td class="product-image">Id</td>
-            <td class="product-details">Product</td>
-            <td class="product-price">Price(€)</td>
-            <td class="product-category">Category</td>
-            <td class="product-removal">Remove</td>
-
-        </tr>
+            <tr>
+                <td class="product-image"></td>
+                <td class="product-details" th:text="#{cart_prodname"></td>
+                <td class="product-price" th:text="|€#{cart_price}|"></td>
+                <td class="product-category" th:text="#{cart_category}">
+            </tr>
         </thead>
         <tbody>
-        <tr th:each="product : ${showCart}">
-            <td th:text="*{product.id}"></td>
-            <td th:text="*{product.name}"></td>
-            <td th:text="*{product.price}"></td>
-            <td th:text="*{product.category}"></td>
-            <td>
-                <a th:href="@{~/cart/del/{id} (id = *{product.id})}" th:text="Remove"
-                   onclick="return confirm('Are you sure you want to delete this ?')">
-                </a>
-            </td>
+            <tr th:each="product : ${showCart}">
+                <td th:text="*{product.imgurl}">
 
-        </tr>
+                </td>
+                <td th:text="*{product.name}"></td>
+                <td th:text="*{product.price}"></td>
+                <td th:text="*{product.category}"></td>
+                <td>
+                    <a th:href="@{~/cart/del/{id} (id = *{product.id})}" th:text="Remove"
+                       onclick="return confirm('Are you sure you want to delete this ?')">
+                    </a>
+                </td>
+            </tr>
         </tbody>
     </table>
 

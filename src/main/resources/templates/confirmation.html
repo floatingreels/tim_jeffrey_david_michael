@@ -21,15 +21,18 @@
 <!-- <div class="navigation__bar">
      <nav class="navigation__menu" th:replace ="~{menu::nav_menu}"></nav>
  </div>-->
-<div class="jumbotron text-center">
-    <h1 class="display-3">Thank You!</h1>
-    <p class="lead"><strong>Please check your email</strong> for your order confirmation.</p>
-    <hr>
-    <p>
-        Forgot Something? <a href="index">Return to shop</a>
+    <div class="jumbotron text-center">
+        <h1 class="display-3">Thank You!</h1>
+        <div class="lead">
+            <strong th:text="#{check_mail}"></strong>
+            <p th:text="#{confirm}"></p>
+        </div>
+        <hr>
+        <p th:text="#{not_done}">
+        <a href="index" th:text="#{shop_on}"></a>
     </p>
     <p class="lead">
-        <a class="btn btn-primary btn-sm" href="index" role="button">Continue to homepage</a>
+        <a class="btn btn-primary btn-sm" href="index" role="button" th:text="#{btn_home}"></a>
     </p>
 </div>
 </body>

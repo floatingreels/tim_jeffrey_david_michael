@@ -31,10 +31,8 @@
         <p class="card-title" th:text="*{product.name}"></p>
         <p class="card-text" th:text="*{product.description}"></p>
         <p class="card-body" id="pricecard"th:text="*{product.price}"></p>
-        <a class="card-button" th:href="@{~/cart/add/{id}(id = ${product.id})}">Add to cart</a>
-
+        <a class="card-button" th:href="@{~/cart/add/{id}(id = ${product.id})}" th:text="#{btn_addtocart}"></a>
         </div>
      </div>
-
 </body>
 </html>
