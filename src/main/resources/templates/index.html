@@ -38,6 +38,9 @@
             <tr>
                 <td>Product</td>
                 <td>Prijs</td>
+                <td>BullPoint 1</td>
+                <td>BullPoint 2</td>
+                <td>Suitable for:</td>
                 <td>Details</td>
 
             </tr>
@@ -47,9 +50,9 @@
 
                 <td th:text="${product.name}"></td>
                 <td th:text="${product.price}"></td>
-                <td th:text="${product.bullptn1}"></td>
-                <td th:text="${product.bullptn2}"></td>
-                <td th:text="|This is suitable for ${product.suitfor}|"></td>
+                <td th:text="${product.bullpnt1}"></td>
+                <td th:text="${product.bullpnt2}"></td>
+                <td th:text="|This is suitable for: ${product.suitfor}|"></td>
                 <td><a th:href="@{~/{id}(id = ${product.id})}">Meer details</a></td>
             </tr>
             </tbody>
