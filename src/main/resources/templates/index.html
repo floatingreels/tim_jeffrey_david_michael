@@ -69,13 +69,16 @@
             </tr>
             </tbody>
         </table>-->
-        <div class="card" th:each="product : ${allProducts}">>
-            <div class="card-header"><img th:src="${product.imgurl}"></div>
+        <div class="card" th:each="product : ${allProducts}" style="width: auto">
+            <div class="card-img-top"><img th:src="${product.imgurl}"></div>
             <h4 class="card-title" th:text="${product.name}"></h4>
             <div class="card-text" th:text="${product.bullpnt1}"></div>
             <div class="card-text" th:text="${product.bullpnt2}"></div>
             <h4 th:text="|This is suitable for: ${product.suitfor}|"></h4>
-            <div class="card-body" id="pricecard" th:text="*{product.price}"></div>
+            <div class="card-body" id="pricecard" th:text="${product.price}"></div>
+            <div class="card-footer">
+            <a  th:href="@{~/{id}(id = ${product.id})}">Meer details</a>
+            </div>
 
 
         </div>
