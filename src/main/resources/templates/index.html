@@ -69,7 +69,7 @@
             </tr>
             </tbody>
         </table>-->
-        <div class="card">
+        <div class="card" th:each="product : ${allProducts}">>
             <div class="card-header"><img th:src="${product.imgurl}"></div>
             <h4 class="card-title" th:text="${product.name}"></h4>
             <div class="card-text" th:text="${product.bullpnt1}"></div>

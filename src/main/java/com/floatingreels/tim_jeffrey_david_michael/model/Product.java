@@ -17,6 +17,7 @@ public class Product {
     private String name;
     @NotBlank
     @NotNull
+    @Column(columnDefinition = "text")
     private String imgurl;
     @NotBlank
     @NotNull
