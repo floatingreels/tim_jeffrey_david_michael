@@ -53,11 +53,11 @@
                     <p class="suitable" th:text="|• Suitable for: ${product.suitfor}|"></p>
                     <p id="pricecard" th:text="|€ ${product.price}|"></p>
                     <input id="quantity" type="number" value="1" min="1">
-                    <p th:href="@{~/{id}(id = ${product.id})}">Meer details</p>
-                    <input class="btn" value="Add to cart" type="submit"></input>
+                    <a th:href="@{~/{id}(id = ${product.id})}">More details</a>
+                    <a th:href="@{~/cart/add/{id}(id = ${product.id})}">Add to cart</a>
+
                 </div>
             </div>
-
 
 
         </div>
