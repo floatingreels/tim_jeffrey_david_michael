@@ -28,10 +28,13 @@ public class Product {
     private String description;
     @DecimalMin(value = "0.05")
     private BigDecimal price;
-    @NotBlank
-    private String bullpnt1, bullpnt2;
     @NotNull
+    private String bullpnt1, bullpnt2;
+    @NotNull(message = "for which animals is this product suitable for?")
     private String suitfor;
+
+    public Product() {
+    }
 
     public String getBullpnt1() {
         return bullpnt1;
@@ -55,9 +58,6 @@ public class Product {
 
     public void setSuitfor(String suitfor) {
         this.suitfor = suitfor;
-    }
-
-    public Product() {
     }
 
     public int getId() {

@@ -43,12 +43,15 @@
             </tr>
             </thead>
             <tbody>
-                <tr th:each="product : ${allProducts}">
+            <tr th:each="product : ${allProducts}">
 
-                    <td th:text="${product.name}"></td>
-                    <td th:text="${product.price}"></td>
-                    <td><a th:href="@{~/{id}(id = ${product.id})}">Meer details</a></td>
-                </tr>
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.price}"></td>
+                <td th:text="${product.bullptn1}"></td>
+                <td th:text="${product.bullptn2}"></td>
+                <td th:text="|This is suitable for ${product.suitfor}|"></td>
+                <td><a th:href="@{~/{id}(id = ${product.id})}">Meer details</a></td>
+            </tr>
             </tbody>
         </table>
 
