@@ -31,9 +31,15 @@ public class ShoppingCartController {
     public String addToCart(@PathVariable(value = "id") int id) {
         Product p = dao.findById(id).get();
         cart.add(p);
-
         return "redirect:/index";
     }
 
+    @RequestMapping(value = "/cart/del/{id}", method = RequestMethod.GET)
+    public String delFromCart(@PathVariable(value = "id") int id) {
+        Product p = dao.findById(id).get();
+        cart.remove(p);
+        return "redirect:/cart";
 
+
+    }
 }
