@@ -65,27 +65,33 @@ body {
 }
 
 #producttable tr:nth-child(even) {
-    background-color: grey !important;
+    background-color: #4CAF50 !important;
 }
-a.button6{
-     display:inline-block;
-     padding:0.7em 1.4em;
-     margin:0 0.3em 0.3em 0;
-     border-radius:0.15em;
-     box-sizing: border-box;
-     text-decoration:none;
-     font-family:'Roboto',sans-serif;
-     text-transform:uppercase;
-     font-weight:400;
-     color:#FFFFFF;
-     background-color:#3369ff;
-     box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
-     text-align:center;
-     position:relative;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
-a.button6:active{
-     top:0.1em;
+
+li {
+    float: left;
 }
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
 
 
 
