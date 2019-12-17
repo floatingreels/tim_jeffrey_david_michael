@@ -6,3 +6,8 @@
 body {
     background-color: rgba(0, 0, 0, .03) !important;
 }
+#suitable{
+    text-decoration: underline!important;
+    text-decoration-style: solid!important;
+
+}
