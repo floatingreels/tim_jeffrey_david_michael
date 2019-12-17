@@ -11,7 +11,8 @@ import java.util.Optional;
 
 //added by DG
 @Controller
-public class IndexController {
+public class IndexController
+
     @Autowired
     ProductDAO dao;
 
