@@ -40,6 +40,11 @@ public class ShoppingCartController {
         cart.remove(p);
         return "redirect:/cart";
 
+    }
 
+    @RequestMapping(value = "/cart/clear", method = RequestMethod.GET)
+    public String clearCart() {
+        cart.clear();
+        return "redirect:/confirmation";
     }
 }

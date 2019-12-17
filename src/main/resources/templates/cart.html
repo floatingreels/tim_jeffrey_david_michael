@@ -44,7 +44,7 @@
             <td class="product-image">Id</td>
             <td class="product-details">Product</td>
             <td class="product-price">Price</td>
-            <td class="product-price">Price</td>
+            <td class="product-category">Category</td>
             <td class="product-removal">Remove</td>
 
         </tr>
@@ -55,9 +55,11 @@
             <td th:text="*{name}"></td>
             <td th:text="*{price}"></td>
             <td th:text="*{category}"></td>
-            <td><a th:href="@{~/cart/del/{id} (id = ${product.id})}" th:text="Remove"
-                onclick="return confirm('Are you sure you want to delete this ?')">
-            </a></td>
+            <td>
+                <a th:href="@{~/cart/del/{id} (id = ${product.id})}" th:text="Remove"
+                   onclick="return confirm('Are you sure you want to delete this ?')">
+                </a>
+            </td>
 
         </tr>
         </tbody>
@@ -87,14 +89,15 @@
             <label>E-mailadress: </label>
             <input type="text" placeholder="e.g. info@TimandJeffrey.be"/>
             <br>
-
+            <br>
             <label>Any remarks about delivery? </label>
             <br>
+
             <textarea style="height: 169px; width: 565px;" placeholder="e.g. Knock , there is no bell"></textarea>
             <br>
             <div>
                 <br>
-                <a th:href="@{~/confirmation}">Submit</a>
+                <a th:href="@{~/cart/clear}">Submit</a>
             </div>
 
         </div>
