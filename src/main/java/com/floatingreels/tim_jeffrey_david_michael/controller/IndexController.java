@@ -11,18 +11,18 @@ import java.util.Optional;
 
 //added by DG
 @Controller
-public class IndexController
+public class IndexController {
 
     @Autowired
     ProductDAO dao;
 
-    @RequestMapping(value={"", "/index"}, method = RequestMethod.GET)
-    public String showIndex(ModelMap map){
+    @RequestMapping(value = {"", "/index"}, method = RequestMethod.GET)
+    public String showIndex(ModelMap map) {
         return "index";
     }
 
-    @ModelAttribute(value="allProducts")
-    public Iterable<Product> showProducts(){
+    @ModelAttribute(value = "allProducts")
+    public Iterable<Product> showProducts() {
         return dao.findAll();
     }
 
@@ -43,9 +43,10 @@ public class IndexController
 
     @RequestMapping(value = "/{category}", method = RequestMethod.GET)
 
-    public Iterable<Product> searchByCategory(@PathVariable(value = "category") String category){
+    public Iterable<Product> searchByCategory(@PathVariable(value = "category") String category) {
         return dao.findByCategory(category);
     }
+
     @RequestMapping(value = {"/confirmation"}, method = RequestMethod.GET)
     public String ShowConfirmation() {
         return "confirmation";
