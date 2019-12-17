@@ -40,41 +40,6 @@
 
     <div id="productwrapper" class="display">
 
-        <!--<table id="producttable">
-            <thead>
-            <tr>
-                <td>Product</td>
-                <td>Prijs</td>
-                <td>BullPoint 1</td>
-                <td>BullPoint 2</td>
-                <td>Suitable for:</td>
-                <td>Quantity</td>
-                <td>Details</td>
-
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="product : ${allProducts}">
-
-                <td th:text="${product.name}"></td>
-                <td th:text="${product.price}"></td>
-                <td th:text="${product.bullpnt1}"></td>
-                <td th:text="${product.bullpnt2}"></td>
-                <td th:text="|This is suitable for: ${product.suitfor}|"></td>
-                <td><input id="quantity" type="number" value="1" min="1"></td>
-                <td><a th:href="@{~/{id}(id = ${product.id})}">Meer details</a></td>
-                <td>
-                    <button class="btn1"><a th:href="@{/shoppingcart}">Add</a></button>
-                    >
-                </td>
-                <td>
-                    <button class="btn1"><a th:href="@{/shoppingcart}">Order now</a></button>
-                    >
-                </td>
-
-            </tr>
-            </tbody>
-        </table>-->
         <div class="row">
 
             <div class="card-body" th:each="product : ${allProducts}">
@@ -85,13 +50,14 @@
                     <h4 class="card-title" th:text="${product.name}"></h4>
                     <p class="card-text" th:text="|• ${product.bullpnt1}|"></p>
                     <p class="card-text" th:text="|• ${product.bullpnt2}|"></p>
-                    <p class="card-text" id="suitable" th:text="|• Suitable for: ${product.suitfor}|"></p>
-                    <p class="card-body" id="pricecard" th:text="|€ ${product.price}|"></p>
+                    <p class="suitable" th:text="|• Suitable for: ${product.suitfor}|"></p>
+                    <p id="pricecard" th:text="|€ ${product.price}|"></p>
                     <input id="quantity" type="number" value="1" min="1">
-                    <a th:href="@{~/{id}(id = ${product.id})}">Meer details</a>
+                    <p th:href="@{~/{id}(id = ${product.id})}">Meer details</p>
+                    <input class="btn" value="Add to cart" type="submit"></input>
                 </div>
             </div>
-            <input class="btn" value="Add to cart" type="submit"></input>
+
 
 
         </div>
