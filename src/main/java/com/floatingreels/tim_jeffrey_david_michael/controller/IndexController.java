@@ -33,8 +33,14 @@ public class IndexController {
     }
 
     @RequestMapping(value = {"/confirmation"}, method = RequestMethod.GET)
-    public String ShowConfirmation() {
+    public String showConfirmation() {
         return "confirmation";
     }
+
+    @GetMapping(value = {"/about"})
+    public String showAbout() {
+        return "about";
+    }
+
 
 }
