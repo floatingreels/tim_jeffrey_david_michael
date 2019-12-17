@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class ShoppingCartController {
-
+/*
     @Autowired
     ProductDAO dao;
 
@@ -25,6 +25,6 @@ public class ShoppingCartController {
     }
 
 
-
+*/
 
 }
