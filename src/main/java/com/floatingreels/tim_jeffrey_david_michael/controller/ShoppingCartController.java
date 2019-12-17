@@ -39,7 +39,6 @@ public class ShoppingCartController {
         Product p = dao.findById(id).get();
         cart.remove(p);
         return "redirect:/cart";
-
     }
 
     @RequestMapping(value = "/cart/clear", method = RequestMethod.GET)
