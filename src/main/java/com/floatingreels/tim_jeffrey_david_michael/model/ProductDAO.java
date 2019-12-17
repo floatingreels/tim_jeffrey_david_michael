@@ -13,14 +13,15 @@ public interface ProductDAO extends CrudRepository<Product, Integer> {
 //    ArrayList<Product> cart = new ArrayList<Product>();
 //    ArrayList<Product> addToCart(Product p);
 
-    @Query("SELECT b FROM Product b WHERE b.category like 'FOOD'")
-    Iterable<Product> getCatFood();
+//    @Query("SELECT b FROM Product b WHERE b.category like 'FOOD'")
+//    Iterable<Product> getCatFood();
+//
+//    @Query("SELECT b FROM Product b WHERE b.category like 'TOY'")
+//    Iterable<Product> getCatToy();
+//
+//    @Query("SELECT b FROM Product b WHERE b.category like 'HABITAT'")
+//    Iterable<Product> getCatHabitat();
 
-    @Query("SELECT b FROM Product b WHERE b.category like 'TOY'")
-    Iterable<Product> getCatToy();
-
-    @Query("SELECT b FROM Product b WHERE b.category like 'HABITAT'")
-    Iterable<Product> getCatHabitat();
-
+    Iterable<Product> findByCategory(String category);
 
 }

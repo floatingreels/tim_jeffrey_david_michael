@@ -5,9 +5,9 @@ import com.floatingreels.tim_jeffrey_david_michael.model.ProductDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 //added by DG
 @Controller
@@ -25,19 +25,25 @@ public class IndexController {
         return dao.findAll();
     }
 
-    @ModelAttribute(value="categoryFood")
-    public Iterable<Product> showCategoryFood(){
-        return dao.getCatFood();
-    }
+//    @ModelAttribute(value="categoryFood")
+//    public Iterable<Product> showCategoryFood(){
+//        return dao.getCatFood();
+//    }
+//
+//    @ModelAttribute(value="categoryToy")
+//    public Iterable<Product> showCategoryToy(){
+//        return dao.getCatToy();
+//    }
+//
+//    @ModelAttribute (value="categoryHabitat")
+//    public Iterable<Product> showCategoryHabitat(){
+//        return dao.getCatHabitat();
+//    }
 
-    @ModelAttribute(value="categoryToy")
-    public Iterable<Product> showCategoryToy(){
-        return dao.getCatToy();
-    }
+    @RequestMapping(value = "/{category}", method = RequestMethod.GET)
 
-    @ModelAttribute (value="categoryHabitat")
-    public Iterable<Product> showCategoryHabitat(){
-        return dao.getCatHabitat();
+    public Iterable<Product> searchByCategory(@PathVariable(value = "category") String category){
+        return dao.findByCategory(category);
     }
 
 }
