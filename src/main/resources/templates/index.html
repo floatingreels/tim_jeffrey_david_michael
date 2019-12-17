@@ -30,6 +30,9 @@
     </script>
 </head>
 <body>
+    <div class="navigation__bar">
+        <nav class="navigation__menu" th:replace ="~{menu::nav_menu(index)}"></nav>
+    </div>
 <br>
 <h1>
 <a th:href="@{~/cart}">Shopping Cart</a></h1>
