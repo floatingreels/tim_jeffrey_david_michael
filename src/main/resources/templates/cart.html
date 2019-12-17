@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
+<<<<<<< Updated upstream
     <meta charset="UTF-8">
+=======
+
+    <meta name="viewport" content="width=device-width initial-scale=1,shrink-to-fit=no">
+    <meta charset="UTF-8">
+
+
+    <link rel="stylesheet" th:href="@{~/CSS/main.css}">
+
+>>>>>>> Stashed changes
     <title>TJ Shopping Cart</title>
 </head>
+
 <body>
+
+<form method="get" th:action="@{~/cart}" object="txt.file">
+    <br>
+
+    <div class="container">
+        <br>
+        <div>
+            <label>Name: </label>
+            <input type="text" placeholder="e.g. Jan"/>
+            <br>
+            <label>Surname: </label>
+            <input type="text" placeholder="e.g. Smith"/>
+            <label>Adress: </label>
+            <input type="text" placeholder="e.g. Bluestreet 123"/>
+            <br>
+            <label>Postal Code: </label>
+            <input type="text" placeholder="e.g. 1000"/>
+            <br>
+            <label>Country: </label>
+            <input type="text" placeholder="e.g. Belgium"/>
+            <label>E-mailadress: </label>
+            <input type="text" placeholder="e.g. info@TimandJeffrey.be"/>
+            <br>
+
+            <label>Any remarks about delivery? </label>
+            <br>
+            <textarea style="height: 169px; width: 565px;" placeholder="e.g. Knock , there is no bell"></textarea>
+            <br>
+            <div>
+                <br>
+                <a th:href="@{~/confirmation}">Submit</a>
+            </div>
+
+        </div>
+
+    </div>
+</form>
+
 
 </body>
 </html>
