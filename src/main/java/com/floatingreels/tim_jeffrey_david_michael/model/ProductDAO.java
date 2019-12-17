@@ -10,8 +10,8 @@ import java.util.ArrayList;
 public interface ProductDAO extends CrudRepository<Product, Integer> {
 
     //added by DG
-    ArrayList<Product> cart = new ArrayList<Product>();
-    ArrayList<Product> addToCart(Product p);
+//    ArrayList<Product> cart = new ArrayList<Product>();
+//    ArrayList<Product> addToCart(Product p);
 
     @Query("SELECT b FROM Product b WHERE b.category like 'FOOD'")
     Iterable<Product> getCatFood();
