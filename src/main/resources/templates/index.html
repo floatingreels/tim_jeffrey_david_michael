@@ -30,6 +30,9 @@
     </script>
 </head>
 <body>
+<br>
+<h1>
+<a th:href="@{~/cart}">Shopping Cart</a></h1>
 <div class="container-fluid">
 
     <div id="productwrapper" class="display">
@@ -82,6 +85,8 @@
             <div class="card-footer">
                 <a th:href="@{~/{id}(id = ${product.id})}">Meer details</a>
             </div>
+            <input class="btn" value="Add" type="submit"></input>
+
 
 
         </div>

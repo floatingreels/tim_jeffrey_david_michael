@@ -45,5 +45,9 @@ public class IndexController {
     public Iterable<Product> searchByCategory(@PathVariable(value = "category") String category){
         return dao.findByCategory(category);
     }
+    @RequestMapping(value = {"/confirmation"}, method = RequestMethod.GET)
+    public String ShowConfirmation() {
+        return "confirmation";
+    }
 
 }
