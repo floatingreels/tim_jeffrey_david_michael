@@ -52,9 +52,11 @@
                     <p class="card-text" th:text="|• ${product.bullpnt2}|"></p>
                     <p class="suitable" th:text="|• Suitable for: ${product.suitfor}|"></p>
                     <p id="pricecard" th:text="|€ ${product.price}|"></p>
-                    <input id="quantity" type="number" value="1" min="1">
                     <a th:href="@{~/{id}(id = ${product.id})}">More details</a>
+                    <input id="quantity" type="number" value="1" min="1">
                     <a th:href="@{~/cart/add/{id}(id = ${product.id})}">Add to cart</a>
+
+
 
                 </div>
             </div>
