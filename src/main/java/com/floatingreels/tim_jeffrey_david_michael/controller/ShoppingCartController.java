@@ -36,8 +36,8 @@ public class ShoppingCartController {
 
     @RequestMapping(value = "/cart/del/{id}", method = RequestMethod.GET)
     public String delFromCart(@PathVariable(value = "id") int id) {
-        Product p = dao.findById(id).get();
-        cart.remove(p);
+        Product c = dao.findById(id).get();
+        cart.remove(c);
         return "redirect:/cart";
 
     }
