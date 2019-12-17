@@ -18,7 +18,7 @@ public class DetailController {
     ProductDAO dao;
 
 
-    @RequestMapping(value = "{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String showDetails(ModelMap map, @PathVariable(name = "id") int id) {
         if (dao.findById(id).isPresent()) {
             map.addAttribute("product", dao.findById(id).get());

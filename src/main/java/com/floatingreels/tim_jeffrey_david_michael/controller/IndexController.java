@@ -26,29 +26,11 @@ public class IndexController {
         return dao.findAll();
     }
 
-//    @ModelAttribute(value="categoryFood")
-//    public Iterable<Product> showCategoryFood(){
-//        return dao.getCatFood();
-//    }
-//
-//    @ModelAttribute(value="categoryToy")
-//    public Iterable<Product> showCategoryToy(){
-//        return dao.getCatToy();
-//    }
-//
-//    @ModelAttribute (value="categoryHabitat")
-//    public Iterable<Product> showCategoryHabitat(){
-//        return dao.getCatHabitat();
-//    }
-
-    @RequestMapping(value = {"/{category}", "/index/{category}"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/index/{category}"}, method = RequestMethod.GET)
     public String searchByCategory(ModelMap map, @PathVariable(value = "category") String category) {
         map.addAttribute("allProducts", dao.findByCategory(category));
         return "index";
     }
-
-    @ModelAttribute(value="showByCategory"
-    )
 
     @RequestMapping(value = {"/confirmation"}, method = RequestMethod.GET)
     public String ShowConfirmation() {
