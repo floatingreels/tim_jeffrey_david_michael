@@ -43,7 +43,8 @@ public class IndexController {
 
     @RequestMapping(value = "/{category}", method = RequestMethod.GET)
 
-    public Iterable<Product> searchByCategory(@PathVariable(value = "category") String category) {
+    public Iterable<Product> searchByCategory(ModelMap map, @PathVariable(value = "category") String category) {
+        map.addAttribute("category",dao.findByCategory(category);
         return dao.findByCategory(category);
     }
 
