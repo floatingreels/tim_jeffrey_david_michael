@@ -1,13 +1,18 @@
-#quantity {
-    width: 40px !important;
-
-}
-
 body {
     background-color: rgba(0, 0, 0, .03) !important;
 }
-#suitable{
-    text-decoration: underline!important;
-    text-decoration-style: solid!important;
 
+#suitable {
+    text-decoration: underline !important;
+    text-decoration-style: solid !important;
+}
+
+.card {
+    width: 500px;
+    height: 500px;
+}
+
+.card-img-top {
+    width: 500px;
+    height: 500px;
 }

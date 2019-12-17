@@ -11,20 +11,15 @@
             <li>
                 <a th:href="@{~/about}" th:class="${(page =='about')?'active':''}">About</a>
             </li>
-                <div class="dropdown__category">
-                    <button class="dropdown__category__button">Category</button>
-                    <div class="dropdown__category__content">
-                    <a  class="dropdown__category__item" th:href="@{~/index/food}">Food</a>
-                    <a class="dropdown__category__item" th:href="@{~/index/habitat}">Habitat</a>
-                    <a class="dropdown__category__item" th:href="@{~/index/toy}">Toy</a>
-                    </div>
-            </div>
             <li>
-
+                <a th:href="@{~/index/food}" th:class="${(page =='category')?'active':''}">Food</a>
             </li>
-<!--            <li>-->
-<!--                <a th:href="@{~/index/food}" th:class="${(page =='category')?'active':''}">Category</a>-->
-<!--            </li>-->
+            <li>
+                <a th:href="@{~/index/toy}" th:class="${(page =='category')?'active':''}">Toys</a>
+            </li>
+            <li>
+                <a th:href="@{~/index/habitat}" th:class="${(page =='category')?'active':''}">Habitat</a>
+            </li>
             <li>
                 <a th:href="@{~/cart}" th:class="${(page =='cart')?'active':''}">Cart></a>
             </li>
