@@ -28,6 +28,34 @@ public class Product {
     private String description;
     @DecimalMin(value = "0.05")
     private BigDecimal price;
+    @NotBlank
+    private String bullpnt1, bullpnt2;
+    @NotNull
+    private String suitfor;
+
+    public String getBullpnt1() {
+        return bullpnt1;
+    }
+
+    public void setBullpnt1(String bullpnt1) {
+        this.bullpnt1 = bullpnt1;
+    }
+
+    public String getBullpnt2() {
+        return bullpnt2;
+    }
+
+    public void setBullpnt2(String bullpnt2) {
+        this.bullpnt2 = bullpnt2;
+    }
+
+    public String getSuitfor() {
+        return suitfor;
+    }
+
+    public void setSuitfor(String suitfor) {
+        this.suitfor = suitfor;
+    }
 
     public Product() {
     }
