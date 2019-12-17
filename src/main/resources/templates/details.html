@@ -22,15 +22,15 @@
     <title>TJ Product Details</title>
 </head>
 <body>
-    <div class="details__wrapper">
-        <div>
-            <img class ="details__image" th:src="${imgurl}" alt="furry toy mouse">
-        </div>
-        <div class="details"  th:object="${product}">
-            <p class="details__name" th:text="*{name}"></p>
-            <p class="details__price" th:text="*{price}"></p>
-            <p class="details__description" th:text="*{description}"></p>
-        </div>
-    </div>
+<div class="details__wrapper">
+    <div>
+        <img th:src="${product.imgurl}">
+</div>
+<div class="details" th:object="${product}">
+    <p class="details__name" th:text="*{name}"></p>
+    <p class="details__price" th:text="*{price}"></p>
+    <p class="details__description" th:text="*{description}"></p>
+</div>
+</div>
 </body>
 </html>
