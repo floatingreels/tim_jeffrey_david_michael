@@ -36,24 +36,26 @@
     <nav class="navigation__menu" th:replace="~{menu::nav_menu(cart)}"></nav>
 </div>
 <!-- 1st part of page ; Shopping Cart -->
+<img id="shopcart"
+     src="https://icon-library.net/images/shopping-cart-icon-png-transparent/shopping-cart-icon-png-transparent-14.jpg"
+     height="50" width="50">
 <h1>Shopping Cart</h1>
-
+<br>
 <div class="shopping-cart">
 
     <table id="producttable">
         <thead>
         <tr>
-            <td class="product-image"></td>
+
             <td class="product-details" th:text="#{cart_prodname}"></td>
             <td class="product-price" th:text="|€ #{cart_price}|"></td>
             <td class="product-category" th:text="#{cart_category}">
+            <td>Remove</td>
         </tr>
         </thead>
         <tbody>
         <tr th:each="product : ${showCart}">
-            <td th:text="*{product.imgurl}">
 
-            </td>
             <td th:text="*{product.name}"></td>
             <td th:text="*{product.price}"></td>
             <td th:text="*{product.category}"></td>
@@ -67,8 +69,12 @@
     </table>
 
 </div>
+<br>
+<br>
 <!-- 2nd part of page ; submit order form -->
 <h2>Submit Order</h2>
+<br>
+
 <form class="needs-validation" novalidate>
     <div class="form-row">
         <div class="col-md-4 mb-3">
