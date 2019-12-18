@@ -30,31 +30,31 @@
     </script>
 </head>
 <body>
-    <div class="navigation__bar">
-        <nav class="navigation__menu" th:replace="~{menu::nav_menu(index)}"></nav>
-    </div>
-    <br>
-    <h1>
-        <a th:href="@{~/cart}">Shopping Cart</a>
-    </h1>
-    <div class="container-fluid">
-        <div id="productwrapper" class="display">
-            <div class="row">
-                <div class="card-body" th:each="product : ${allProducts}">
-                    <div class="col-sm-4">
-                        <img class="card-img-top" th:src="${product.imgurl}">
-                        <h4 class="card-title" th:text="${product.name}"></h4>
-                        <p class="card-text" th:text="|• ${product.bullpnt1}|"></p>
-                        <p class="card-text" th:text="|• ${product.bullpnt2}|"></p>
-                        <p class="suitable" th:text="|• #{prod_suitable} ${product.suitfor}|"></p>
-                        <p id="pricecard" th:text="|€ ${product.price}|"></p>
-                        <a th:href="@{~/{id}(id = ${product.id})}" th:text="#{prod_detail}"></a>
-                        <input id="quantity" type="number" value="1" min="1">
-                        <a class="card-button" th:href="@{~/cart/add/{id}(id = ${product.id})}">Add to cart</a>
-                    </div>
-                </div>
-            </div>
+<div class="navigation__bar">
+    <nav class="navigation__menu" th:replace="~{menu::nav_menu(index)}"></nav>
+</div>
+<br>
+<h1>
+    <a th:href="@{~/cart}">Shopping Cart</a>
+</h1>
+<div class="row">
+    <div class="card" th:each="product : ${allProducts}" style="width: 18rem;">
+        <img class="card-img-top" th:src="${product.imgurl}">
+        <div class="card-body">
+            <h4 class="card-title" th:text="${product.name}"></h4>
+            <h6 class="card-subtitle mb-2 text-muted" th:text="|#{prod_suitable} ${product.suitfor}|">></h6>
+            <p class="card-text" th:text="|• ${product.bullpnt1}|"></p>
+            <p class="card-text" th:text="|• ${product.bullpnt2}|"></p>
+            <p id="pricecard" th:text="|€ ${product.price}|"></p>
+            <br>
+            <a th:href="@{~/{id}(id = ${product.id})}" th:text="#{prod_detail}"></a>
+            <br>
+
+            <a class="btn btn-primary" th:href="@{~/cart/add/{id}(id = ${product.id})}">Add to cart</a>
+
         </div>
     </div>
+</div>
+</div>
 </body>
 </html>
