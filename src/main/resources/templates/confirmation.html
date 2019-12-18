@@ -3,6 +3,8 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{~/CSS/main.css}">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -21,19 +23,26 @@
 <!-- <div class="navigation__bar">
      <nav class="navigation__menu" th:replace ="~{menu::nav_menu}"></nav>
  </div>-->
-    <div class="jumbotron text-center">
-        <h1 class="display-3">Thank You!</h1>
-        <div class="lead">
-            <strong th:text="#{check_mail}"></strong>
-            <p th:text="#{confirm}"></p>
-        </div>
-        <hr>
-        <p th:text="#{not_done}">
+<div class="jumbotron text-center">
+    <h1 class="display-3">Thank You!</h1>
+    <div class="lead">
+        <strong th:text="#{check_mail}"></strong>
+        <p th:text="#{confirm}"></p>
+    </div>
+    <hr>
+    <p th:text="#{not_done}">
         <a href="index" th:text="#{shop_on}"></a>
     </p>
     <p class="lead">
         <a class="btn btn-primary btn-sm" href="index" role="button" th:text="#{btn_home}"></a>
     </p>
 </div>
+<br>
 </body>
+<br>
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright © Tim And Jeffrey's Incorporated</p>
+    </div>
+</footer>
 </html>

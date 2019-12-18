@@ -98,13 +98,19 @@ li a:hover {
 }
 
 #ordernow {
-    color: #4CAF50;
-    text-decoration: underline #4CAF50;
+    color: orangered;
+    text-decoration: underline orangered;
     font-size: 1.3em;
 }
-#filterby{
+
+#filterby {
     font-weight: bolder;
     text-transform: uppercase;
+}
+
+#ordernowcart {
+    color: orangered;
+    text-decoration: underline orangered;
 }
 
 
