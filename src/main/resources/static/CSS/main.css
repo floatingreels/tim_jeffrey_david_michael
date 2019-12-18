@@ -102,6 +102,10 @@ li a:hover {
     text-decoration: underline #4CAF50;
     font-size: 1.3em;
 }
+#filterby{
+    font-weight: bolder;
+    text-transform: uppercase;
+}
 
 
 
