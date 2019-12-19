@@ -3,7 +3,6 @@
       xmlns:th="http://www.thymeleaf.org">
 <!-- author DG-->
 <div class="navigation__bar">
-
     <nav id="navigation__menu" th:fragment="nav_menu(page)">
         <ul>
             <li>
@@ -15,18 +14,18 @@
             <li>
                 <a th:href="@{~/cart}" th:class="${(page =='cart')?'active':''}" th:text="#{menu_cart}"></a>
             </li>
-            <!-- TODO : Translations for filter ? -->
+            //"All" = unnecessary, is exactly the same as Home
             <li>
                 <a th:href="@{~/index/}">All</a>
             </li>
             <li>
-                <a th:href="@{~/index/food}">Food</a>
+                <a th:href="@{~/index/food}" th:text="#{categ_food}"></a>
             </li>
             <li>
-                <a th:href="@{~/index/toy}">Toy</a>
+                <a th:href="@{~/index/toy}" th:text="#{categ_toy}"></a>
             </li>
             <li>
-                <a th:href="@{~/index/toy}">Habitat</a></li>
+                <a th:href="@{~/index/habitat}" th:text="#{categ_habitat}"></a></li>
         </ul>
     </nav>
 </div>
