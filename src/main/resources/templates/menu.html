@@ -5,27 +5,25 @@
 <div class="navigation__bar">
     <nav id="navigation__menu" th:fragment="nav_menu(page)">
         <ul>
-            <li>
+            <li class="navigation__menu__item">
                 <a th:href="@{~/index}" th:class="${(page =='home')?'active':''}" th:text="#{menu_home}">Home</a>
             </li>
-            <li>
+            <li class="navigation__menu__item">
                 <a th:href="@{~/about}" th:class="${(page =='about')?'active':''}" th:text="#{menu_about}">About</a>
             </li>
-            <li>
+            <li class="navigation__menu__item">
+                <div class="navigation__dropdown">
+                    <button class="navigation__dropdown__button" th:text="#{menu_category}"></button>
+                    <div class="navigation__dropdown__content">
+                        <a th:href="@{~/index/food}" th:text="#{categ_food}"></a>
+                        <a th:href="@{~/index/toy}" th:text="#{categ_toy}"></a>
+                        <a th:href="@{~/index/habitat}" th:text="#{categ_habitat}"></a>
+                    </div>
+                </div>
+            </li>
+            <li class="navigation__menu__item">
                 <a th:href="@{~/cart}" th:class="${(page =='cart')?'active':''}" th:text="#{menu_cart}"></a>
             </li>
-            //"All" = unnecessary, is exactly the same as Home
-            <li>
-                <a th:href="@{~/index/}">All</a>
-            </li>
-            <li>
-                <a th:href="@{~/index/food}" th:text="#{categ_food}"></a>
-            </li>
-            <li>
-                <a th:href="@{~/index/toy}" th:text="#{categ_toy}"></a>
-            </li>
-            <li>
-                <a th:href="@{~/index/habitat}" th:text="#{categ_habitat}"></a></li>
         </ul>
     </nav>
 </div>
