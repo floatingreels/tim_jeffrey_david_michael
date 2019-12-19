@@ -3,60 +3,37 @@ body {
     padding-top: 56px;
 }
 
-/* Dropdown Button */
-.navigation__dropdown__button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.navigation__dropdown {
-    position: relative;
-    display: inline-block;
-    z-index: 1000;
-
-}
-
-/* Dropdown Content (Hidden by Default) */
-.navigation__dropdown__content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-}
-
-/* Links inside the dropdown */
-.navigation__dropdown__content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change color of dropdown links on hover */
-.navigation__dropdown__content a:hover {
-    background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.navigation__dropdown:hover .navigation__dropdown__content {
-    display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.navigation__dropdown:hover .navigation__dropdown__button {
-    background-color: #3e8e41;
-}
-
 #navigation__menu {
     position: fixed;
     top: 0;
     width: 100%;
+}
+
+#shop.cart {
+    text-align: right;
+}
+
+#shopcart {
+    float: right;
+}
+
+#ordernow {
+    color: orangered;
+    text-decoration: underline orangered;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+#filterby {
+    font-weight: bolder;
+    text-transform: uppercase;
+    background: lightslategray;
+}
+
+#ordernowcart {
+    color: orangered;
+    text-decoration: underline orangered;
+    text-align: center;
 }
 
 ul {
@@ -64,7 +41,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #fbb935;
 }
 
 li {
@@ -79,9 +56,9 @@ li a {
     text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #4CAF50;
+    background-color: #93a0aa;
+    text-decoration: none;
 }
 
 li a:active {
@@ -104,7 +81,7 @@ li a:active {
 }
 
 #producttable tr:nth-child(even) {
-    background-color: #4CAF50 !important;
+    background-color: #ce6749 !important;
 }
 
 #shopcart {
@@ -144,6 +121,52 @@ li a:active {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* https://bootsnipp.com/snippets/M5vml */
+.paddingTB60 {
+    padding: 60px 0px 60px 0px;
+}
+
+.gray-bg {
+    background: #F1F1F1 !important;
+}
+
+.about-title {
+}
+
+.about-title h1 {
+    color: #535353;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.about-title span {
+    color: #AF0808;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.about-title h3 {
+    color: #535353;
+    font-size: 23px;
+    margin-bottom: 24px;
+}
+
+.about-title p {
+    color: #7a7a7a;
+    line-height: 1.8;
+    margin: 0 0 15px;
+}
+
+.about-paddingB {
+    padding-bottom: 12px;
+}
+
+.about-img {
+    padding-left: 57px;
+}
+
+
 
 
 

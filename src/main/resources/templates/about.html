@@ -18,30 +18,32 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <meta charset="UTF-8">
-    <title th:text="#{tj_about}"></title>
+<title th:text="#{tj_about}"></title>
 </head>
 <body>
-    <div class="navigation__bar">
-        <nav class="navigation__menu" th:replace="~{menu::nav_menu(about)}"></nav>
-    </div>
-    <h1>About us</h1>
-    <article>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id malesuada tortor. Curabitur scelerisque purus
-    mauris, vitae suscipit nisi venenatis nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-    cubilia Curae; In hac habitasse platea dictumst. Aenean fringilla varius libero a facilisis. Mauris congue, metus eu
-    vestibulum aliquam, justo odio vulputate est, eu posuere ex lacus sed elit. Vivamus volutpat tristique nibh, vitae
-    rutrum orci blandit viverra. Integer vestibulum in libero quis pharetra. Suspendisse ut nunc elementum, accumsan
-    dolor in, porta lacus. Phasellus urna eros, feugiat id purus in, semper gravida tortor.
+<div class="navigation__bar">
+    <nav class="navigation__menu" th:replace="~{menu::nav_menu(cart)}"></nav>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 col-sm-6">
+            <div class="about-title clearfix">
+                <h1>About <span>Tim & Jeffrey's</span></h1>
+                <h3>Lorem ipsum dolor sit amet </h3>
+                <p class="about-paddingB">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet dolor
+                    libero, eget venenatis mauris finibus dictum. Vestibulum quis elit eget neque porttitor congue non
+                    sit amet dolor. Proin pretium purus a lorem ornare </p>
+                <p>sed lobortis pulvinar. Integer laoreet mi id eros porta euismod. Suspendisse potenti. Nulla eros
+                    mauris, convallis et sem tempus, viverra hendrerit sapien</p>
 
-    Curabitur hendrerit ultrices arcu, eget convallis arcu lobortis sit amet. Phasellus ut venenatis nisl, in tincidunt
-    ipsum. Donec at eleifend lorem. Vivamus vel est aliquam, hendrerit tellus vitae, vestibulum lectus. Maecenas vitae
-    ante vitae odio sodales ultricies. Suspendisse aliquam tempor massa non faucibus. Vivamus vestibulum mauris
-    consectetur, aliquet odio nec, tempus diam. Pellentesque sed semper ante. Donec faucibus eget mauris feugiat
-    condimentum. Donec efficitur est eu rutrum consequat. Duis commodo sollicitudin eleifend. Integer tristique, diam in
-    laoreet mattis, nisi leo auctor neque, sed vulputate ex risus et eros. Aenean aliquet, enim non pharetra
-    scelerisque, sem lorem pharetra purus, a fringilla ligula sem quis velit.
-    </article>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 </body>
+
 <br>
 <footer class="py-5 bg-dark">
     <div class="container">
