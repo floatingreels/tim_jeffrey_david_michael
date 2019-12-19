@@ -26,5 +26,6 @@ public class DetailController {
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Error: Product was not found; Try again please!");
         }
+
     }
 }
