@@ -77,7 +77,8 @@
 <h2>Submit Order</h2>
 <br>
 
-<form class="needs-validation" novalidate>
+<form action="cart/clear" method="get">
+
     <div class="form-row">
         <div class="col-md-4 mb-3">
             <label for="validationCustom01">Full name</label>
@@ -145,10 +146,8 @@
             </div>
         </div>
     </div>
+    <input class="btn btn-primary" type="submit" value="Submit">
 </form>
-<!-- Buttons to either submit or return -->
-<a th:href="@{~/cart/clear}" class="btn btn-primary">Submit Order</a>
-<a th:href="@{~/index}" class="btn btn-primary" style="background-color:#668fff">Forgot Something?</a>
 </div>
 </div>
 </div>
