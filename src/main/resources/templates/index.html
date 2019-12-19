@@ -29,12 +29,12 @@
             });
         });
     </script>
-    <div class="navigation__bar">
-        <nav class="navigation__menu" th:replace="~{menu::nav_menu(index)}"></nav>
-    </div>
-</head>
 
+</head>
 <body>
+<div class="navigation__bar">
+    <nav class="navigation__menu" th:replace="~{menu::nav_menu(index)}"></nav>
+</div>
 <h1 class="my-4">Tim & Jeffrey's</h1>
 <h6 id="ordernow">
     Order before 11.59pm & receive your order tomorrow !
@@ -47,7 +47,7 @@
 <!-- Shows our offer in bootstrap cards-->
 <!-- TODO : card height is not sufficient for our info. needs adjusting -->
 <div class="col-lg-9">
-    <div class="col-lg-4 col-md-6 mb-4" style=" display:inline-block;">
+    <div class="col-lg-4-offset-3 col-md-6-offset-3 mb-4-offset-3" style=" display:inline-block;">
         <div class="card h-100" style="width: 18rem;" th:each="product : ${allProducts}">
             <a th:href="@{~/{id}(id = ${product.id})}"><img class="card-img-top" th:src="${product.imgurl}" alt=""></a>
             <div class="card-body">
