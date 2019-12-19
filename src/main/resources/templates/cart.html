@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <meta charset="UTF-8">
-<title>TJ: Catalogue</title>
+<title th:text="#{tj_catalogue}"></title>
 <!-- Added search function to Shopping cart -->
 <script>
     $(document).ready(function () {
@@ -49,19 +49,18 @@
         <tr>
 
             <td class="product-details" th:text="#{cart_prodname}"></td>
-            <td class="product-price" th:text="|€ #{cart_price}|"></td>
+            <td class="product-price" th:text="|#{cart_price} '(€)'|"></td>
             <td class="product-category" th:text="#{cart_category}">
             <td>Remove</td>
         </tr>
         </thead>
         <tbody>
         <tr th:each="product : ${showCart}">
-
             <td th:text="*{product.name}"></td>
             <td th:text="*{product.price}"></td>
             <td th:text="*{product.category}"></td>
             <td>
-                <a th:href="@{~/cart/del/{id} (id = *{product.id})}" th:text="Remove"
+                <a th:href="@{~/cart/del/{id} (id = *{product.id})}" th:text="#{btn_removefromcart}"
                    onclick="return confirm('Are you sure you want to delete this ?')">
                 </a>
             </td>
@@ -72,9 +71,7 @@
 </div>
 <br>
 <!--call to action-->
-<h6 id="ordernowcart">
-    Order before 11.59pm & receive your order tomorrow !
-</h6>
+<h6 class="order__now-cart" th:text="#{order_now}"></h6>
 <br>
 <!-- 2nd part of page ; submit order form -->
 <h2>Submit Order</h2>

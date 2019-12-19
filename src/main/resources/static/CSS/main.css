@@ -97,7 +97,7 @@ li a:hover {
     float: right;
 }
 
-#ordernow {
+.order__now-home {
     color: orangered;
     text-decoration: underline orangered;
     font-size: 1.3em;
@@ -108,7 +108,7 @@ li a:hover {
     text-transform: uppercase;
 }
 
-#ordernowcart {
+.order__now-cart {
     color: orangered;
     text-decoration: underline orangered;
 }
