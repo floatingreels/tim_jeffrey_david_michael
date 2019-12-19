@@ -39,13 +39,61 @@ body {
 }
 
 /* Change color of dropdown links on hover */
-.navigation__dropdown__content a:hover {background-color: #ddd;}
+.navigation__dropdown__content a:hover {
+    background-color: #ddd;
+}
 
 /* Show the dropdown menu on hover */
-.navigation__dropdown:hover .navigation__dropdown__content {display: block;}
+.navigation__dropdown:hover .navigation__dropdown__content {
+    display: block;
+}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.navigation__dropdown:hover .navigation__dropdown__button {background-color: #3e8e41;}
+.navigation__dropdown:hover .navigation__dropdown__button {
+    background-color: #3e8e41;
+}
+
+
+#navigation__menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100000;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navigation__menu li {
+    float: left;
+}
+
+
+.navigation__menu__item a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navigation__menu__item a:hover {
+    background-color: #111;
+}
+
+.navigation__menu__item a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navigation__menu__item a:hover {
+    background-color: #111;
+}
 
 #suitable {
     text-decoration: underline !important;
@@ -64,34 +112,6 @@ body {
 
 #producttable tr:nth-child(even) {
     background-color: #4CAF50 !important;
-}
-
-#navigation__menu {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100000;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-/*li {*/
-/*    float: left;*/
-/*}*/
-
-.navigation__menu__item a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
 }
 
 #shopcart {
