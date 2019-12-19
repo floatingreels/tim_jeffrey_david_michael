@@ -67,6 +67,7 @@ body {
 #producttable tr:nth-child(even) {
     background-color: #4CAF50 !important;
 }
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -90,6 +91,26 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: #111;
+}
+
+#shopcart {
+    float: right;
+}
+
+#ordernow {
+    color: orangered;
+    text-decoration: underline orangered;
+    font-size: 1.3em;
+}
+
+#filterby {
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+#ordernowcart {
+    color: orangered;
+    text-decoration: underline orangered;
 }
 
 
