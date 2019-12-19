@@ -5,6 +5,7 @@
 <head>
     <meta name="viewport" content="width=device-width initial-scale=1,shrink-to-fit=no">
     <link rel="stylesheet" th:href="@{~/CSS/main.css}">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- script -->
@@ -20,66 +21,56 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <meta charset="UTF-8">
-    <title>TJ: Catalogue</title>
-</head>
-<body>
-    <div class="navigation__bar">
-        <nav class="navigation__menu" th:replace="~{menu::nav_menu(index)}"></nav>
-    </div>
-    <h6 class="order__now-home" th:text="#{order_now}"></h6>
-    <br>
-<!--<h1>-->
-<!--    <a th:href="@{~/cart}">Shopping Cart</a>-->
-<!--</h1>-->
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <h1 class="my-4">Tim & Jeffrey's</h1>
-                <div class="list-group">
-                    <a id="filterby" class="list-group-item">Filter by:</a>
-                    <a th:href="@{~/index/food}" class="list-group-item">Food</a>
-                    <a th:href="@{~/index/toy}" class="list-group-item">Toy</a>
-                    <a th:href="@{~/index/toy}" class="list-group-item">Habitat</a>
-                    <a th:href="@{~/index/}" class="list-group-item">All</a>
-                </div>
-            </div>
-            <br>
-        <!-- Shows our offer in bootstrap cards-->
-        <!-- TODO : card height is not sufficient for our info. needs adjusting -->
-            <div class="container">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100" th:each="product : ${allProducts}">
-                        <a href="@{~/{id}(id = ${product.id})}">
-                            <img class="card-img-top" th:src="${product.imgurl}" alt="">
-                        </a>
-                    <div class="card-body">
-                        <h4 class="card-title" th:text="${product.name}"></h4>
-                        <h5 class="card-text" th:text="|€ ${product.price}|"></h5>
-                        <p class="card-text" th:text="|• ${product.bullpnt1}|"></p>
-                        <p class="card-text" th:text="|• ${product.bullpnt2}|"></p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted" th:text="|#{prod_suitable} ${product.suitfor}|"></small>
-                    </div>
-                    <a class="btn btn-primary" th:href="@{~/cart/add/{id}(id = ${product.id})}" th:text="#{btn_addtocart}"></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-</div>
-<script>
+    <title>TJ: Home</title>
+    <script>
         $(document).ready(function () {
             $('#producttable').DataTable({
                 "search": true
             });
         });
-</script>
+    </script>
+
+</head>
+<body>
+<div class="navigation__bar">
+    <nav class="navigation__menu" th:replace="~{menu::nav_menu(index)}"></nav>
+</div>
+<h1 class="my-4">Tim & Jeffrey's</h1>
+<h6 id="ordernow">
+    Order before 11.59pm & receive your order tomorrow !
+</h6>
+<br>
+<h1>
+    <a th:href="@{~/cart}">Shopping Cart</a>
+</h1>
+<br>
+<!-- Shows our offer in bootstrap cards-->
+<!-- TODO : card height is not sufficient for our info. needs adjusting -->
+<div class="col-lg-9">
+    <div class="col-lg-4-offset-3 col-md-6-offset-3 mb-4-offset-3" style=" display:inline-block;">
+        <div class="card h-100" style="width: 18rem;" th:each="product : ${allProducts}">
+            <a th:href="@{~/{id}(id = ${product.id})}"><img class="card-img-top" th:src="${product.imgurl}" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title" th:text="${product.name}"></h4>
+                <h5 class="card-text" th:text="|€ ${product.price}|"></h5>
+                <p class="card-text" th:text="|• ${product.bullpnt1}|"></p>
+                <p class="card-text" th:text="|• ${product.bullpnt2}|"></p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted" th:text="|#{prod_suitable} ${product.suitfor}|"></small>
+                <a class="btn btn-primary" th:href="@{~/cart/add/{id}(id = ${product.id})}">Add to cart</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+</div>
 </body>
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright © Tim And Jeffrey's Incorporated 2019</p>
+        <p class="m-0 text-center text-white">Copyright © Tim And Jeffrey's Incorporated</p>
     </div>
 </footer>
 </html>
