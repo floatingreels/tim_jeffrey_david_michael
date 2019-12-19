@@ -3,26 +3,30 @@
       xmlns:th="http://www.thymeleaf.org">
 <!-- author DG-->
 <div class="navigation__bar">
+
     <nav id="navigation__menu" th:fragment="nav_menu(page)">
         <ul>
             <li>
                 <a th:href="@{~/index}" th:class="${(page =='home')?'active':''}" th:text="#{menu_home}">Home</a>
             </li>
             <li>
-            <a th:href="@{~/about}" th:class="${(page =='about')?'active':''}" th:text="#{menu_about}">About</a>
+                <a th:href="@{~/about}" th:class="${(page =='about')?'active':''}" th:text="#{menu_about}">About</a>
             </li>
-                <div class="dropdown__category">
-                <button class="dropdown__category__button" th:text="#{menu_category}"></button>
-
-                    <div class="dropdown__category__content">
-                        <a  class="dropdown__category__item" th:href="@{~/index/food}" th:text="#{categ_food}"></a>
-                        <a class="dropdown__category__item" th:href="@{~/index/habitat}" th:text="#{categ_habitat}"></a>
-                        <a class="dropdown__category__item" th:href="@{~/index/toy}" th:text="#{categ_toy}"></a>
-                    </div>
-            </div>
             <li>
                 <a th:href="@{~/cart}" th:class="${(page =='cart')?'active':''}" th:text="#{menu_cart}"></a>
             </li>
+            <!-- TODO : Translations for filter ? -->
+            <li>
+                <a th:href="@{~/index/}">All</a>
+            </li>
+            <li>
+                <a th:href="@{~/index/food}">Food</a>
+            </li>
+            <li>
+                <a th:href="@{~/index/toy}">Toy</a>
+            </li>
+            <li>
+                <a th:href="@{~/index/toy}">Habitat</a></li>
         </ul>
     </nav>
 </div>
