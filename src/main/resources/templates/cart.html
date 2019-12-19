@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <meta charset="UTF-8">
-<title>TJ: Catalogue</title>
+<title th:text="#{tj_cart}"></title>
 <!-- Added search function to Shopping cart -->
 <script>
     $(document).ready(function () {
@@ -49,19 +49,18 @@
         <tr>
 
             <td class="product-details" th:text="#{cart_prodname}"></td>
-            <td class="product-price" th:text="|€ #{cart_price}|"></td>
+            <td class="product-price" th:text="|#{cart_price} '(€)'|"></td>
             <td class="product-category" th:text="#{cart_category}">
-            <td>Remove</td>
+            <td></td>
         </tr>
         </thead>
         <tbody>
         <tr th:each="product : ${showCart}">
-
             <td th:text="*{product.name}"></td>
             <td th:text="*{product.price}"></td>
             <td th:text="*{product.category}"></td>
             <td>
-                <a th:href="@{~/cart/del/{id} (id = *{product.id})}" th:text="Remove"
+                <a th:href="@{~/cart/del/{id} (id = *{product.id})}" th:text="#{btn_removefromcart}"
                    onclick="return confirm('Are you sure you want to delete this ?')">
                 </a>
             </td>
@@ -72,18 +71,17 @@
 </div>
 <br>
 <!--call to action-->
-<h6 id="ordernowcart">
-    Order before 11.59pm & receive your order tomorrow !
-</h6>
+<h6 class="order__now-cart" th:text="#{order_now}"></h6>
 <br>
 <!-- 2nd part of page ; submit order form -->
 <h2>Submit Order</h2>
 <br>
 
-<form class="needs-validation" novalidate>
+<form action="cart/clear" method="get">
+
     <div class="form-row">
         <div class="col-md-4 mb-3">
-            <label for="validationCustom01">Full name</label>
+            <label for="validationCustom01" th:text="#{form_firstname}"></label>
             <input type="text" class="form-control" id="validationCustom01" placeholder="Full name"
                    value="e.g. Mark Smith"
                    required>
@@ -92,7 +90,7 @@
             </div>
         </div>
         <div class="col-md-4 mb-3">
-            <label for="validationCustom02">Email</label>
+            <label for="validationCustom02" th:text="#{form_usermail}"></label>
             <input type="text" class="form-control" id="validationCustom02" placeholder="Email"
                    value="e.g. Info@TimandJeffreys.be"
                    required>
@@ -101,7 +99,7 @@
             </div>
         </div>
         <div class="col-md-4 mb-3">
-            <label for="validationCustomUsername">Username</label>
+            <label for="validationCustomUsername" th:text="#{form_username}"></label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroupPrepend">@</span>
@@ -116,21 +114,21 @@
     </div>
     <div class="form-row">
         <div class="col-md-6 mb-3">
-            <label for="validationCustom03">City</label>
+            <label for="validationCustom03" th:text="#{form_city}"></label>
             <input type="text" class="form-control" id="validationCustom03" placeholder="e.g. Brussels" required>
             <div class="invalid-feedback">
                 Please provide a valid city.
             </div>
         </div>
         <div class="col-md-3 mb-3">
-            <label for="validationCustom04">Zip</label>
+            <label for="validationCustom04" th:text="#{form_postalcode}"></label>
             <input type="text" class="form-control" id="validationCustom04" placeholder=" e.g. 1000" required>
             <div class="invalid-feedback">
                 Please provide a valid zipcode.
             </div>
         </div>
         <div class="col-md-3 mb-3">
-            <label for="exampleInputPassword1">Choose a password</label>
+            <label for="exampleInputPassword1" th:text="#{form_userpass}"></label>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             <div class="invalid-feedback">
                 Please provide a valid password.
@@ -140,18 +138,12 @@
     <div class="form-group">
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-            <label class="form-check-label" for="invalidCheck">
-                Agree to terms and conditions
-            </label>
-            <div class="invalid-feedback">
-                You must agree before submitting.
-            </div>
+            <label class="form-check-label" for="invalidCheck" th:text="#{form_terms}"></label>
+            <div class="invalid-feedback" th:text="#{form_terms_message}"></div>
         </div>
     </div>
+    <input class="btn btn-primary" type="submit" value="Submit">
 </form>
-<!-- Buttons to either submit or return -->
-<a th:href="@{~/cart/clear}" class="btn btn-primary">Submit Order</a>
-<a th:href="@{~/index}" class="btn btn-primary" style="background-color:#668fff">Forgot Something?</a>
 </div>
 </div>
 </div>
@@ -160,7 +152,7 @@
 <br>
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright © Tim And Jeffrey's Incorporated</p>
+        <p class="m-0 text-center text-white">Copyright © Tim & Jeffrey's Incorporated 2019</p>
     </div>
 </footer>
 </html>

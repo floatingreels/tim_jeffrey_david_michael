@@ -1,9 +1,6 @@
 package com.floatingreels.tim_jeffrey_david_michael.model;
 
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-
-import java.util.ArrayList;
 
 /*author: Michael */
 
