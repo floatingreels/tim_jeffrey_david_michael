@@ -18,8 +18,8 @@ body {
 }
 
 #ordernow {
-    color: orangered;
-    text-decoration: underline orangered;
+    color: #4CAF50;
+    text-decoration: underline #4CAF50;
     font-size: 1.3em;
     text-align: center;
 }
@@ -31,7 +31,7 @@ body {
 }
 
 #ordernowcart {
-    color: orangered;
+    color: #4CAF50;
     text-decoration: underline orangered;
     text-align: center;
 }
@@ -65,9 +65,13 @@ li a:active {
     color: #4CAF50;
 }
 
-#suitable {
-    text-decoration: underline !important;
-    text-decoration-style: solid !important;
+li:last-child {
+    float: right;
+
+}
+
+#filteron {
+    color: white;
 }
 
 .card {
@@ -86,13 +90,7 @@ li a:active {
 
 #shopcart {
     float: right;
-}
 
-.order__now-home {
-    color: orangered;
-    text-decoration: underline orangered;
-    font-size: 1.3em;
-    text-align: center;
 }
 
 #filterby {
@@ -102,8 +100,8 @@ li a:active {
 }
 
 .order__now-cart {
-    color: orangered;
-    text-decoration: underline orangered;
+    color: #4CAF50;
+    text-decoration: underline #4CAF50;
     text-align: center;
 }
 

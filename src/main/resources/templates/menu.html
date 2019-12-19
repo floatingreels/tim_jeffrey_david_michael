@@ -11,9 +11,10 @@
             <li class="navigation__menu__item">
                 <a th:href="@{~/about}" th:class="${(page =='about')?'active':''}" th:text="#{menu_about}">About</a>
             </li>
-            <li><a th:href="@{~/index/food}" th:text="#{categ_food}"></a></li>
-            <li><a th:href="@{~/index/toy}" th:text="#{categ_toy}"></a></li>
-            <li><a th:href="@{~/index/habitat}" th:text="#{categ_habitat}"></a></li>
+            <li><a id="filteron">Filter: </a></li>
+            <li><a th:href="@{~/index/food}" th:text="|• #{categ_food}|"></a></li>
+            <li><a th:href="@{~/index/toy}" th:text="|• #{categ_toy}|"></a></li>
+            <li><a th:href="@{~/index/habitat}" th:text="|• #{categ_habitat}|"></a></li>
             <li><a id=shop.cart th:href="@{~/cart}" th:text="#{menu_cart}"></a></li>
         </ul>
     </nav>
