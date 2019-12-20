@@ -1,5 +1,7 @@
 body {
-    background-color: rgba(0, 0, 0, .03) !important;
+    background: url(../Images/Capture1.PNG) center center no-repeat rgba(0, 0, 0, .03) !important;
+    background-size: contain !important;
+    background-attachment: fixed !important;
     padding-top: 56px;
 }
 
@@ -19,8 +21,8 @@ body {
 }
 
 #ordernow {
-    color: #4CAF50;
-    text-decoration: underline #4CAF50;
+    color: orangered;
+    text-decoration: underline orangered;
     font-size: 1.3em;
     text-align: center;
 }
@@ -101,8 +103,8 @@ li:last-child {
 }
 
 .order__now-cart {
-    color: #4CAF50;
-    text-decoration: underline #4CAF50;
+    color: orangered;
+    text-decoration: underline orangered;
     text-align: center;
 }
 
@@ -164,12 +166,22 @@ li:last-child {
 .about-img {
     padding-left: 57px;
 }
-footer{
+
+footer {
     background: grey;
-    position: fixed!important;
-    bottom: 0!important;
-    width: 100%!important;
-    z-index: 100000!important;
+    position: fixed !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    z-index: 100000 !important;
+}
+
+background-image {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 
