@@ -46,4 +46,5 @@ public class ShoppingCartController {
         cart.clear();
         return "redirect:/confirmation";
     }
+
 }
