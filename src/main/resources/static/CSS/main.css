@@ -5,7 +5,9 @@ body {
     background-size: contain !important;
     background-attachment: fixed !important;
     padding-top: 56px;
+    margin-left: 20px;
 }
+
 
 #navigation__menu {
     position: fixed;
