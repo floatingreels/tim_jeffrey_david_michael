@@ -11,11 +11,13 @@ import java.util.ArrayList;
 
 @Controller
 public class ShoppingCartController {
-
+    //om gebruik te maken van alle features van de CrudRepository
     @Autowired
     ProductDAO dao;
 
+    //statische lijst met producten die winkelwagen voorstelt, meteen geïitialiseerd
     static ArrayList<Product> cart = new ArrayList<Product>();
+
 
     @RequestMapping(value = "/cart", method = RequestMethod.GET)
     public String showCart(ModelMap map) {
