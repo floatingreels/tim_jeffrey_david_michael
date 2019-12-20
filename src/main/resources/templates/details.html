@@ -18,24 +18,32 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" th:href="@{~/CSS/main.css}">
     <meta charset="UTF-8">
-    <title th:text="#{tj_details}" ></title>
+    <title th:text="#{tj_details}"></title>
 </head>
 <body>
-    <div class="navigation__bar">
-        <nav class="navigation__menu" th:replace ="~{menu::nav_menu(details)}"></nav>
-    </div>
-    <div class="card__wrapper">
-        <div class="card-header">
-            <img th:src="${product.imgurl}">
-        </div>
-        <p class="card-title" th:text="*{product.name}"></p>
+<div class="navigation__bar">
+    <nav class="navigation__menu" th:replace="~{menu::nav_menu(details)}"></nav>
+</div>
+<div class="card__wrapper">
+    <div>
+        <img th:src="${product.imgurl}" >
+        <h2 class="card-title" th:text="*{product.name}"></h2>
+        <a class="btn btn-primary"
+           th:href="@{~/cart/add/{id}(id = *{product.id})}"
+           th:text="#{btn_addtocart}"></a>
+        <br>
         <p class="card-text" th:text="*{product.description}"></p>
-        <p class="card-body" id="pricecard"th:text="*{product.price}"></p>
-        <a class="card-button" th:href="@{~/cart/add/{id}(id = ${product.id})}" th:text="#{btn_addtocart}"></a>
-        </div>
-     </div>
+        <p class="card-text" th:text="|• ${product.bullpnt1}|"></p>
+        <p class="card-text" th:text="|• ${product.bullpnt2}|"></p>
+        <h4 class="card-text" th:text="|€ *{product.price}"/pc|></h4>
+        <br>
+    </div>
+
+
+</div>
+</div>
 </body>
-<footer class="py-5 bg-dark">
+<footer>
     <div class="container">
         <p class="m-0 text-center text-white">Copyright © Tim And Jeffrey's Incorporated</p>
     </div>

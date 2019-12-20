@@ -32,12 +32,12 @@
 
 </head>
 <body>
-    <div class="navigation__bar">
-        <nav class="navigation__menu" th:replace="~{menu::nav_menu(index)}"></nav>
-    </div>
-    <h6 id="ordernow" th:text="#{order_now}"></h6>
-    <h1 class="my-4">Tim & Jeffrey's</h1>
-    <br>
+<div class="navigation__bar">
+    <nav class="navigation__menu" th:replace="~{menu::nav_menu(index)}"></nav>
+</div>
+<h6 id="ordernow" th:text="#{order_now}"></h6>
+<h1 class="my-4">Tim & Jeffrey's</h1>
+<br>
 
 <!--Why extra link to cart in body if already in navmenu? <h1>-->
 <!--    <a th:href="@{~/cart}">Shopping Cart</a>-->
@@ -55,12 +55,13 @@
             <div class="card-body">
                 <h4 class="card-title" th:text="${product.name}"></h4>
                 <h5 class="card-text" th:text="|€ ${product.price}|"></h5>
-                <p class="card-text" th:text="|• ${product.bullpnt1}|"></p>
-                <p class="card-text" th:text="|• ${product.bullpnt2}|"></p>
+
             </div>
             <div class="card-footer">
                 <small class="text-muted" th:text="|#{prod_suitable} ${product.suitfor}|"></small>
-                <a class="btn btn-primary" th:href="@{~/cart/add/{id}(id = ${product.id})}" th:text="#{btn_addtocart}"></a>
+                <br>
+                <a class="btn btn-primary" th:href="@{~/cart/add/{id}(id = ${product.id})}"
+                   th:text="#{btn_addtocart}"></a>
             </div>
         </div>
     </div>
@@ -69,9 +70,9 @@
 <br>
 
 </body>
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright © Tim And Jeffrey's Incorporated</p>
-        </div>
-    </footer>
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright © Tim And Jeffrey's Incorporated</p>
+    </div>
+</footer>
 </html>
