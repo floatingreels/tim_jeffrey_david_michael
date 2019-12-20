@@ -22,13 +22,6 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <meta charset="UTF-8">
     <title th:text="#{tj_home}"></title>
-    <script>
-        $(document).ready(function () {
-            $('#producttable').DataTable({
-                "search": true
-            });
-        });
-    </script>
 
 </head>
 <body>
@@ -36,38 +29,33 @@
     <nav class="navigation__menu" th:replace="~{menu::nav_menu(index)}"></nav>
 </div>
 <h6 id="ordernow" th:text="#{order_now}"></h6>
-<h1 class="my-4">Tim & Jeffrey's</h1>
+<img id="logo" src="Images/Capture1.PNG" height="300">
 <br>
-
-<!--Why extra link to cart in body if already in navmenu? <h1>-->
-<!--    <a th:href="@{~/cart}">Shopping Cart</a>-->
-<!--</h1>-->
-<!--<br>-->
 
 <!-- Shows our offer in bootstrap cards-->
 <!-- TODO : card height is not sufficient for our info. needs adjusting -->
-<div class="col-lg-9">
-    <div class="col-lg-4-offset-3 col-md-6-offset-3 mb-4-offset-3" style=" display:inline-block;">
-        <div class="card h-100" style="width: 18rem;" th:each="product : ${allProducts}">
-            <a th:href="@{~/{id}(id = ${product.id})}">
-                <img class="card-img-top" th:src="${product.imgurl}" alt="">
-            </a>
-            <div class="card-body">
-                <h4 class="card-title" th:text="${product.name}"></h4>
-                <h5 class="card-text" th:text="|€ ${product.price}|"></h5>
+    <div class="col-lg-11">
+        <div class="col-lg-4-offset-3 col-md-6-offset-3 mb-4-offset-3" style=" display:inline-block;">
+            <div class="card h-100" style="width: 18rem;" th:each="product : ${allProducts}">
+                <a th:href="@{~/{id}(id = ${product.id})}">
+                    <img class="card-img-top" th:src="${product.imgurl}" alt="">
+                </a>
+                <div class="card-body">
+                    <h4 class="card-title" th:text="${product.name}"></h4>
+                    <h5 class="card-text" th:text="|€ ${product.price}|"></h5>
 
-            </div>
-            <div class="card-footer">
-                <small class="text-muted" th:text="|#{prod_suitable} ${product.suitfor}|"></small>
-                <br>
-                <a class="btn btn-primary" th:href="@{~/cart/add/{id}(id = ${product.id})}"
-                   th:text="#{btn_addtocart}"></a>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted" th:text="|#{prod_suitable} ${product.suitfor}|"></small>
+                    <br>
+                    <a class="btn btn-primary" th:href="@{~/cart/add/{id}(id = ${product.id})}"
+                       th:text="#{btn_addtocart}"></a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<br>
+    <br>
 
 </body>
 <footer>
