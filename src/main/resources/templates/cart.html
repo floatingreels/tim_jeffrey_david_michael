@@ -81,21 +81,19 @@
 
     <div class="form-row">
         <div class="col-md-4 mb-3">
-            <label for="validationCustom01" th:text="#{form_firstname}"></label>
+            <label for="validationCustom01" th:text="#{form_fullname}"></label>
             <input type="text" class="form-control" id="validationCustom01" placeholder="Full name"
-                   value="e.g. Mark Smith"
+                   value="e.g. Jeanne Dielman"
                    required>
-            <div class="valid-feedback">
-                Looks good!
+            <div class="valid-feedback" th:text="#{form_valid}">
             </div>
         </div>
         <div class="col-md-4 mb-3">
             <label for="validationCustom02" th:text="#{form_usermail}"></label>
             <input type="text" class="form-control" id="validationCustom02" placeholder="Email"
-                   value="e.g. Info@TimandJeffreys.be"
+                   value="e.g. jeanne.dielman@mail.be"
                    required>
-            <div class="valid-feedback">
-                Looks good!
+            <div class="valid-feedback" th:text="#{form_valid}">
             </div>
         </div>
         <div class="col-md-4 mb-3">
@@ -104,34 +102,29 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroupPrepend">@</span>
                 </div>
-                <input type="text" class="form-control" id="validationCustomUsername" placeholder="e.g. Jean123"
+                <input type="text" class="form-control" id="validationCustomUsername" placeholder="e.g. JeanneD23"
                        aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                    Please choose a username.
                 </div>
             </div>
         </div>
     </div>
     <div class="form-row">
         <div class="col-md-6 mb-3">
-            <label for="validationCustom03" th:text="#{form_city}"></label>
-            <input type="text" class="form-control" id="validationCustom03" placeholder="e.g. Brussels" required>
+            <label for="validationCustom03" th:text="#{form_address}"></label>
+            <input type="text" class="form-control" id="validationCustom03" placeholder="e.g. 23 Commerce Quay, 1080 Brussels" required>
             <div class="invalid-feedback">
-                Please provide a valid city.
             </div>
         </div>
         <div class="col-md-3 mb-3">
-            <label for="validationCustom04" th:text="#{form_postalcode}"></label>
-            <input type="text" class="form-control" id="validationCustom04" placeholder=" e.g. 1000" required>
-            <div class="invalid-feedback">
-                Please provide a valid zipcode.
+            <label for="validationCustom04" th:text="#{form_userpass}"></label>
+            <input type="text" class="form-control" id="validationCustom04" required>
+            <div class="invalid-feedback" th:text="#{invalid_pass}">
             </div>
         </div>
         <div class="col-md-3 mb-3">
-            <label for="exampleInputPassword1" th:text="#{form_userpass}"></label>
+            <label for="exampleInputPassword1" th:text="#{form_userpass_confirm}"></label>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            <div class="invalid-feedback">
-                Please provide a valid password.
+            <div class="invalid-feedback" th:text="#{badmatch_pass}">
             </div>
         </div>
     </div>
@@ -144,9 +137,6 @@
     </div>
     <input class="btn btn-primary" type="submit" value="Submit">
 </form>
-</div>
-</div>
-</div>
 <br>
 </body>
 <br>
