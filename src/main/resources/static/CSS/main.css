@@ -23,8 +23,8 @@ body {
 }
 
 #ordernow {
-    color: orangered;
-    text-decoration: underline orangered;
+    color: red;
+    text-decoration: underline red;
     font-size: 1.3em;
     text-align: center;
 }
@@ -36,8 +36,8 @@ body {
 }
 
 #ordernowcart {
-    color: #4CAF50;
-    text-decoration: underline orangered;
+    color: red;
+    text-decoration: underline red;
     text-align: center;
 }
 
@@ -67,7 +67,7 @@ li a:hover {
 }
 
 li a:active {
-    color: #4CAF50;
+    color: #ce6749;
 }
 
 li:last-child {

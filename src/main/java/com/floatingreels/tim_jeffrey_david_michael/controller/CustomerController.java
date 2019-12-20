@@ -12,8 +12,7 @@
 //
 //import javax.validation.Valid;
 //
-////Author DG
-////aangemaakt maar nog niet operationeel
+////Aangemaakt maar nog niet operationeel
 //@Controller
 //public class CustomerController {
 //
@@ -43,4 +42,5 @@
 //        return "redirect:/register";
 //    }
 //}
-
+//
+//
