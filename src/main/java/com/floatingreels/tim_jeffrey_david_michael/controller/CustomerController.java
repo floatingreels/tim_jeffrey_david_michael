@@ -12,27 +12,31 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 
+//Aangemaakt maar nog niet operationeel
 @Controller
 public class CustomerController {
 
+    //om gebruik te maken van alle features van de CrudRepository
     @Autowired
     CustomerDAO repo;
 
+    //om methode uit te voeren wanneer er in de pagina iets moet uitgevoerd worden
     @ModelAttribute(value = "registerCustomer")
     public Customer registerCustomer(Customer c) {
         return repo.save(c);
     }
 
-//    @RequestMapping(value = "/registration/newcustomer", method = RequestMethod.GET)
-//    public String registerCustomer(){
-//        return "redirect:/regcomfirm";
-//    }
+    //Om pagina weer te geven wanneer er aanvraag binnenkomt
+    @RequestMapping(value = "/register/new", method = RequestMethod.GET)
+    public String registerCustomer() {
+        return "register";
+    }
 
     @RequestMapping(value = "/register/new", method = RequestMethod.POST)
     //ModelAttribute hier zodat je de info van de newProduct opnieuw krijgt als er fouten zijn en geen volledig leeg formulier
     //BindingResult gaat resultaat van formulier toevoegen aan database
-    public String saveCustomer(@ModelAttribute("newCustomer") @Valid Customer newCustomer, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
+    public String saveCustomer(@ModelAttribute("newCustomer") @Valid Customer newCustomer, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
             return "index";
         } else repo.save(newCustomer);
         return "redirect:/register";

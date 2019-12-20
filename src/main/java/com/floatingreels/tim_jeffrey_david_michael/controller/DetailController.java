@@ -14,9 +14,9 @@ import org.springframework.web.server.ResponseStatusException;
 @Controller
 public class DetailController {
 
+    //om gebruik te maken van alle features van de CrudRepository
     @Autowired
     ProductDAO dao;
-
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String showDetails(ModelMap map, @PathVariable(name = "id") int id) {
