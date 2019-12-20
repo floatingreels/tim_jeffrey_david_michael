@@ -14,7 +14,8 @@ public class IndexController {
     @Autowired
     ProductDAO dao;
 
-    @RequestMapping(value = {"", "/index"}, method = RequestMethod.GET)
+
+    @RequestMapping(value = {"/index"}, method = RequestMethod.GET)
     public String showIndex(ModelMap map) {
         return "index";
     }
