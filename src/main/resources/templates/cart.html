@@ -3,33 +3,33 @@
 <!-- TODO : fix all translations where broken -->
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
-<meta name="viewport" content="width=device-width initial-scale=1,shrink-to-fit=no">
-<link rel="stylesheet" th:href="@{~/CSS/main.css}">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+<head>
+    <meta name="viewport" content="width=device-width initial-scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{~/CSS/main.css}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <!-- script -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-<meta charset="UTF-8">
-<title th:text="#{tj_cart}"></title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <meta charset="UTF-8">
+    <title th:text="#{tj_cart}"></title>
 <!-- Added search function to Shopping cart -->
-<script>
+    <script>
     $(document).ready(function () {
         $('#producttable').DataTable({
             "search": true
         });
     });
-</script>
-<title>TJ Shopping Cart</title>
+    </script>
 </head>
 
 <body>
@@ -40,7 +40,7 @@
 <img id="shopcart"
      src="https://icon-library.net/images/shopping-cart-icon-png-transparent/shopping-cart-icon-png-transparent-14.jpg"
      height="50" width="50">
-<h1>Shopping Cart</h1>
+<h1 th:text="#{menu_cart}"></h1>
 <br>
 <div class="shopping-cart">
 
@@ -74,7 +74,7 @@
 <h6 class="order__now-cart" th:text="#{order_now}"></h6>
 <br>
 <!-- 2nd part of page ; submit order form -->
-<h2>Submit Order</h2>
+<h2 th:text="#{form_order}"></h2>
 <br>
 
 <form action="cart/clear" method="get">
@@ -135,7 +135,7 @@
             <div class="invalid-feedback" th:text="#{form_terms_message}"></div>
         </div>
     </div>
-    <input class="btn btn-primary" type="submit" value="Submit">
+    <input class="btn btn-primary" type="submit" value="Submit" th:text="#{btn_submit}">
 </form>
 <br>
 </body>
