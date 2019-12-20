@@ -164,7 +164,12 @@ li:last-child {
 .about-img {
     padding-left: 57px;
 }
-
+footer{
+    position: fixed!important;
+    bottom: 0!important;
+    width: 100%!important;
+    z-index: 100000!important;
+}
 
 
 
