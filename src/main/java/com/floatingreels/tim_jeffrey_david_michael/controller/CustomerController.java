@@ -28,7 +28,7 @@ public class CustomerController {
 //        return "redirect:/regcomfirm";
 //    }
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @RequestMapping(value = "/register/new", method = RequestMethod.POST)
     //ModelAttribute hier zodat je de info van de newProduct opnieuw krijgt als er fouten zijn en geen volledig leeg formulier
     //BindingResult gaat resultaat van formulier toevoegen aan database
     public String saveCustomer(@ModelAttribute("newCustomer") @Valid Customer newCustomer, BindingResult bindingResult){
