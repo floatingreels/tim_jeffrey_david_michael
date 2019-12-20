@@ -18,19 +18,23 @@ public class Product {
     private String name;
     @NotBlank
     @NotNull
+    //nodig om character limit te verhogen
     @Column(columnDefinition = "text")
     private String imgurl;
     @NotBlank
     @NotNull
     private String category;
+    //nodig om character limit te verhogen
     @Column(columnDefinition = "text")
-    @Size(min = 100, message = "give a proper description of this product")
+    //omschrijving moet voldoende zijn
+    @Size(min = 100)
     private String description;
     @DecimalMin(value = "0.05")
     private BigDecimal price;
     @NotNull
     private String bullpnt1, bullpnt2;
-    @NotNull(message = "for which animals is this product suitable for?")
+    //voor welk dier is dit product geschikt
+    @NotNull
     private String suitfor;
 
     public Product() {
@@ -109,7 +113,9 @@ public class Product {
     }
     /* geschreven door Michael */
 
-    //Thanks, Swasse!
+
+    //zegt wanneer twee objecten identiek zijn, nodig om object uit collection te kunnen verwijderen
+    //cheers, Swasse!
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

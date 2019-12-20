@@ -18,6 +18,7 @@ public class DetailController {
     @Autowired
     ProductDAO dao;
 
+    //om detailpagina van artikel (aangesproken via id) te kunnen openen
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String showDetails(ModelMap map, @PathVariable(name = "id") int id) {
         if (dao.findById(id).isPresent()) {
@@ -26,6 +27,5 @@ public class DetailController {
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Error: Product was not found; Try again please!");
         }
-
     }
 }

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @Controller
 public class ShoppingCartController {
-//methode om onze producten toe te voegen aan de shoppingcart. //
+
     @Autowired
     ProductDAO dao;
 
@@ -26,21 +26,22 @@ public class ShoppingCartController {
     public ArrayList<Product> showCart() {
         return cart;
     }
-//voegt een item toe aan de cart, gelinked aan de id.
+   //voegt een item toe aan de cart, gelinkt aan de id
     @GetMapping(value = "/cart/add/{id}")
     public String addToCart(@PathVariable(value = "id") int id) {
         Product p = dao.findById(id).get();
         cart.add(p);
         return "redirect:/index";
     }
-//verwijdert een item uit onze cart
+    //verwijdert een item uit de cart, gelinkt aan id
     @RequestMapping(value = "/cart/del/{id}", method = RequestMethod.GET)
     public String delFromCart(@PathVariable(value = "id") int id) {
         Product c = dao.findById(id).get();
         cart.remove(c);
         return "redirect:/cart";
     }
-//verwijst naar de confirmatiepagina.
+
+    //verwijst naar de confirmatiepagina.
     @RequestMapping(value = "/cart/clear", method = RequestMethod.GET)
     public String clearCart() {
         cart.clear();
