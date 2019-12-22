@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 @Controller
@@ -17,6 +18,7 @@ public class ShoppingCartController {
 
     //statische lijst met producten die winkelwagen voorstelt, meteen geïitialiseerd
     static ArrayList<Product> cart = new ArrayList<Product>();
+    static double totaalPrijs = 0;
 
 
     @RequestMapping(value = "/cart", method = RequestMethod.GET)
@@ -33,6 +35,9 @@ public class ShoppingCartController {
     public String addToCart(@PathVariable(value = "id") int id) {
         Product p = dao.findById(id).get();
         cart.add(p);
+
+        updateTotal();
+
         return "redirect:/index";
     }
     //verwijdert een item uit de cart, gelinkt aan id
@@ -40,6 +45,9 @@ public class ShoppingCartController {
     public String delFromCart(@PathVariable(value = "id") int id) {
         Product c = dao.findById(id).get();
         cart.remove(c);
+
+        updateTotal();
+
         return "redirect:/cart";
     }
 
@@ -47,7 +55,13 @@ public class ShoppingCartController {
     @RequestMapping(value = "/cart/clear", method = RequestMethod.GET)
     public String clearCart() {
         cart.clear();
+
+        totaalPrijs = 0;
         return "redirect:/confirmation";
+    }
+
+    public void updateTotal() {
+        totaalPrijs = cart.stream().mapToDouble(Product::getPrice).sum();
     }
 
 }

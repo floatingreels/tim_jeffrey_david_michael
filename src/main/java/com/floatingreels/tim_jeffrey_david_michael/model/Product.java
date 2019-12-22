@@ -30,7 +30,7 @@ public class Product {
     @Size(min = 100)
     private String description;
     @DecimalMin(value = "0.05")
-    private BigDecimal price;
+    private Double price;
     @NotNull
     private String bullpnt1, bullpnt2;
     //voor welk dier is dit product geschikt
@@ -104,11 +104,11 @@ public class Product {
         this.category = category;
     }
 
-    public BigDecimal getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
     /* geschreven door Michael */
